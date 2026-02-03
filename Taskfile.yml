@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+tasks:
+  default:
+    desc: Show available tasks
+    cmds:
+      - task -l
+
+  mcp:run:
+    desc: Run MCP server
+    dir: ./mcp
+    cmds:
+      - go run ./cmd/mcp
+
+  mcp:build:
+    desc: Build MCP binary
+    dir: ./mcp
+    cmds:
+      - go build -o ./target/SurferMcp ./cmd/mcp
+
+  ext:dev:
+    desc: Run extension dev server
+    dir: ./extension
+    cmds:
+      - pnpm install
+      - pnpm dev

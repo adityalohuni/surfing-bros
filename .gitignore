@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+
+node_modules/
+dist/
+.wxt/
+.turbo/
+.cache/
+
+*.log
+
+/mcp/target/
+/mcp/workflows.json
+/mcp/*.exe
+

@@ -1,0 +1,6 @@
+[submodule "extension"]
+	path = extension
+	url = https://github.com/adityalohuni/surfing-bros-extension.git
+[submodule "mcp"]
+	path = mcp
+	url = https://github.com/adityalohuni/surfing-bros-mcp.git
