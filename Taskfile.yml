@@ -21,9 +21,26 @@ tasks:
       - sh: '[ -n "{{.MSG}}" ]'
         msg: "Commit message required. Usage: task git:commit-push -- \"message\""
     cmds:
-      - git add -A
-      - git commit -m "{{.MSG}}"
-      - git push
+      - |
+        set -e
+        for dir in mcp extension; do
+          if [ -d "$dir/.git" ]; then
+            if ! git -C "$dir" diff --quiet || ! git -C "$dir" diff --cached --quiet; then
+              git -C "$dir" add -A
+              git -C "$dir" commit -m "{{.MSG}} ($dir)"
+              git -C "$dir" push
+            fi
+          fi
+        done
+      - |
+        set -e
+        git add -A
+        if ! git diff --cached --quiet; then
+          git commit -m "{{.MSG}}"
+          git push
+        else
+          echo "No root changes to commit."
+        fi
 
   mcp:run:
     desc: Run MCP server
