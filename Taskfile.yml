@@ -8,6 +8,23 @@ tasks:
     cmds:
       - task -l
 
+  submodules:init:
+    desc: Initialize and update git submodules
+    cmds:
+      - git submodule update --init --recursive
+  
+  git:commit-push:
+    desc: 'Commit all changes and push (usage: go-task git:commit-push -- "message")'
+    vars:
+      MSG: '{{.CLI_ARGS}}'
+    preconditions:
+      - sh: '[ -n "{{.MSG}}" ]'
+        msg: "Commit message required. Usage: task git:commit-push -- \"message\""
+    cmds:
+      - git add -A
+      - git commit -m "{{.MSG}}"
+      - git push
+
   mcp:run:
     desc: Run MCP server
     dir: ./mcp

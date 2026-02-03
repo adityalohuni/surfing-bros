@@ -7,6 +7,18 @@ SurfingBro is an MCP-driven browser automation system:
 
 ## Quick Start
 
+### 0) Clone with submodules
+
+```bash
+git clone --recurse-submodules <repo-url>
+```
+
+If already cloned without submodules:
+
+```bash
+git submodule update --init --recursive
+```
+
 ### 1) Start MCP server
 
 ```bash
