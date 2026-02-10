@@ -1,6 +1,6 @@
 # SurfingBro
 
-![SurfingBro icon](./icon.png)
+<img src="./icon.png" alt="SurfingBro icon" width="96" />
 
 SurfingBro is an MCP-driven browser automation system:
 
