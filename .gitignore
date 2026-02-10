@@ -13,3 +13,5 @@ dist/
 /mcp/workflows.json
 /mcp/*.exe
 
+
+.pnpm-store/
