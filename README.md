@@ -1,5 +1,7 @@
 # SurfingBro
 
+![SurfingBro icon](./icon.png)
+
 SurfingBro is an MCP-driven browser automation system:
 
 - `mcp/` — Go MCP server (tools + resources)
